@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<title>Ficha RPG — Gledos</title>
+
+<style>
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #0a2a6a, #000022 70%);
+    font-family: 'Trebuchet MS', serif;
+    color: #e0e0e0;
+    padding: 30px;
+    background-blend-mode: screen;
+    overflow: hidden;
+}
+
+/* Efeito de brilho sutil no fundo */
+@keyframes magicalGlow {
+    0% {
+        filter: hue-rotate(0deg) brightness(1);
+    }
+    50% {
+        filter: hue-rotate(20deg) brightness(1.1);
+    }
+    100% {
+        filter: hue-rotate(-20deg) brightness(1);
+    }
+}
+
+body {
+    animation: magicalGlow 10s infinite alternate;
+}
+
+/* Partículas mágicas */
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(173, 216, 255, 0.8);
+    border-radius: 50%;
+    animation: float 8s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) translateX(0) scale(1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) translateX(50px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Container geral */
+.ficha {
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+    z-index: 1; /* Fica acima das partículas */
+}
+
+/* Caixas transparentes, só borda e sombra */
+.box {
+    background: transparent; /* totalmente transparente */
+    border: 2px solid rgba(6, 46, 99, 0.7);
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.3);
+}
+
+/* TOPO */
+.topo {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+}
+
+.topo-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.titulo {
+    font-weight: bold;
+    font-size: 18px;
+    color: #aad8ff;
+}
+
+/* IMAGEM */
+.avatar {
+    background: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 3px solid #1e90ff;
+    box-shadow:
+        0 0 12px #1e90ff,
+        0 0 25px rgba(30, 144, 255, 0.8);
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ATRIBUTOS */
+.atributos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.atributo {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #cde6ff;
+}
+
+/* LETREIRO */
+.nome {
+    font-size: 48px;
+    font-family: "Old English Text MT", "UnifrakturCook", serif;
+    color: #87cefa;
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 0 0 12px #3a8cff;
+}
+
+/* TEXTOS */
+.texto {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: justify;
+    color: #d1e8ffcc;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Partículas mágicas -->
+<div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+<div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+<div class="particle" style="left: 50%; animation-delay: 4s;"></div>
+<div class="particle" style="left: 70%; animation-delay: 6s;"></div>
+<div class="particle" style="left: 90%; animation-delay: 1s;"></div>
+
+<div class="ficha">
+
+    <div class="nome">Gledos</div>
+
+    <!-- TOPO -->
+    <div class="topo">
+
+        <div class="topo-info">
+            <div class="box">
+                <div class="titulo">Explorador / Protetor</div>
+                Classe
+            </div>
+
+            <div class="box">
+                <div class="titulo">Raça</div>
+                Humano
+            </div>
+
+            <div class="box">
+                <div class="titulo">Local / Período</div>
+                Verona, Itália<br>
+                Século XVI
+            </div>
+
+            <div class="box atributos">
+                <div class="atributo">FOR <span>12</span></div>
+                <div class="atributo">DES <span>14</span></div>
+                <div class="atributo">CON <span>13</span></div>
+                <div class="atributo">INT <span>??</span></div>
+                <div class="atributo">SAB <span>16</span></div>
+                <div class="atributo">CAR <span>12</span></div>
+            </div>
+        </div>
+
+        <div class="avatar box" style="width: 230px; height: 310px;">
+            <img src="plinplon/mago.png" alt="Gledos" />
+        </div>
+
+    </div>
+
+    <!-- HABILIDADES -->
+    <div class="box">
+        <div class="titulo">Habilidades Especiais</div>
+        <div class="texto">
+            • Rastreamento impecável, capaz de seguir pessoas desaparecidas.<br>
+            • Sobrevivência urbana e selvagem.<br>
+            • Instinto de proteção a vulneráveis, mesmo sem apego emocional.
+        </div>
+    </div>
+
+    <!-- EQUIPAMENTOS -->
+    <div class="box">
+        <div class="titulo">Equipamentos</div>
+        <div class="texto">
+            Armas: Cajado antigo (uso limitado).<br>
+            Armadura: Manto simples reforçado.<br>
+            Itens: Grimório selado, moedas, amuleto de proteção.
+        </div>
+    </div>
+
+    <!-- LORE -->
+    <div class="box">
+        <div class="titulo">Lore</div>
+        <div class="texto">
+            Gledos não nasceu vazio. Ele foi esvaziado.<br><br>
+
+            Após a tragédia mais violenta de sua vida, seus sentimentos cessaram.
+            Um poder imensurável despertou — suficiente para extinguir nações —
+            mas sem propósito para ser usado.<br><br>
+
+            Hoje ele vive como um explorador comum, aceitando missões apenas para sobreviver.
+            Não cria laços, não sente culpa, não busca redenção.
+            O mundo existe. E ele continua nele.
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
